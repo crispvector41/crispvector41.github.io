@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>555热播电视剧在线观看-热播剧集在线播放_高清电视剧免费观看</title>
+<meta name="description" content="555热播电视剧在线观看页面，汇集近期热播剧集与经典剧目的在线播放入口，按类型、题材与更新状态分区呈现，帮助观众快速找到想看的电视剧并开始观看。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1420'/%3E%3Cpath d='M24 18l24 14-24 14z' fill='%23ffb03b'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0e1420;
+    --ink-2:#1a2233;
+    --line:#26314a;
+    --text:#e8edf7;
+    --muted:#9aa7bf;
+    --gold:#ffb03b;
+    --gold-soft:#ffd27a;
+    --teal:#43d8c9;
+    --card:#151d2c;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:radial-gradient(1200px 600px at 80% -10%,#1d2a44 0%,transparent 60%),var(--ink);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1160px,92vw);margin:0 auto;}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,20,32,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:22px;padding:12px 0;}
+  .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .logo .mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(145deg,#ffb03b,#ff7a3b);
+    display:grid;place-items:center;flex-shrink:0;
+  }
+  .logo .mark svg{width:18px;height:18px;}
+  .logo b{
+    font-size:16px;letter-spacing:.5px;font-weight:700;
+    color:#fff;white-space:nowrap;
+  }
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:14px;color:var(--muted);padding:7px 12px;border-radius:9px;
+    transition:.2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{color:#fff;background:#1f2a40;}
+  .search-mini{
+    display:flex;align-items:center;gap:6px;
+    background:#101828;border:1px solid var(--line);border-radius:10px;
+    padding:5px 5px 5px 12px;
+  }
+  .search-mini input{
+    border:0;background:transparent;color:var(--text);font-size:13px;
+    width:130px;outline:none;font-family:inherit;
+  }
+  .search-mini input::placeholder{color:#6f7d95;}
+  .search-mini button{
+    border:0;background:var(--gold);color:#231a06;font-weight:700;
+    font-size:13px;padding:6px 12px;border-radius:8px;cursor:pointer;
+    font-family:inherit;
+  }
+  .search-mini button:hover{background:var(--gold-soft);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:54px 0 44px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:1.6px;color:var(--gold);
+    border:1px solid rgba(255,176,59,.35);border-radius:999px;
+    padding:5px 14px;background:rgba(255,176,59,.08);margin-bottom:20px;
+  }
+  .kicker i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;}
+  h1{
+    font-size:clamp(28px,4.1vw,46px);
+    line-height:1.28;margin:0 0 18px;font-weight:800;letter-spacing:.5px;
+    color:#fff;
+  }
+  h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{color:#b9c4d8;font-size:15.5px;margin:0 0 26px;max-width:34em;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:11px;font-size:15px;font-weight:700;
+    transition:.2s;border:1px solid transparent;
+  }
+  .btn-primary{background:linear-gradient(135deg,#ffb03b,#ff8a3b);color:#241a05;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,150,50,.28);}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:#141c2b;}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft);}
+  .btn[aria-disabled="true"]{opacity:.55;pointer-events:none;}
+
+  .poster{
+    position:relative;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line);background:linear-gradient(160deg,#1b2740,#111827);
+    padding:18px;box-shadow:0 24px 60px rgba(0,0,0,.45);
+  }
+  .poster .screen{
+    border-radius:12px;background:#0b111c;border:1px solid #22304a;
+    padding:16px 16px 12px;position:relative;
+  }
+  .poster .screen .live{
+    font-size:11px;letter-spacing:1px;color:var(--teal);display:flex;gap:6px;align-items:center;
+  }
+  .poster .screen .live i{width:6px;height:6px;border-radius:50%;background:var(--teal);display:block;animation:pulse 1.6s infinite;}
+  @keyframes pulse{50%{opacity:.3;}}
+  .poster .screen h3{margin:10px 0 4px;font-size:17px;color:#fff;}
+  .poster .screen small{color:#7f8da6;font-size:12px;}
+  .bar-line{height:5px;border-radius:4px;background:#1d2941;margin-top:14px;overflow:hidden;}
+  .bar-line span{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--gold),#ff7a3b);}
+  .poster .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+  .poster .tags span{
+    font-size:12px;color:#c6d1e4;background:#1c273c;border:1px solid #2a3852;
+    padding:4px 10px;border-radius:999px;
+  }
+
+  /* ---------- section base ---------- */
+  section{padding:52px 0;border-top:1px solid rgba(38,49,74,.6);}
+  .sec-head{margin-bottom:28px;}
+  .sec-head .tag{
+    font-size:12px;letter-spacing:2px;color:var(--gold);display:block;margin-bottom:8px;
+  }
+  .sec-head h2{
+    font-size:clamp(21px,2.6vw,28px);margin:0 0 10px;color:#fff;font-weight:800;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:52em;}
+
+  /* ---------- filter ---------- */
+  .filter{
+    display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px 18px;margin-bottom:26px;
+  }
+  .chips{display:flex;gap:9px;flex-wrap:wrap;}
+  .chip{
+    border:1px solid var(--line);background:#111a28;color:#c3cfe1;
+    font-size:13.5px;padding:7px 16px;border-radius:999px;cursor:pointer;
+    font-family:inherit;transition:.18s;
+  }
+  .chip:hover{border-color:#3d4d6b;color:#fff;}
+  .chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#241a05;font-weight:700;}
+  .count{font-size:13px;color:var(--muted);white-space:nowrap;}
+  .count b{color:var(--gold-soft);font-size:15px;}
+
+  /* ---------- cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;transition:.22s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:#39496a;box-shadow:0 16px 36px rgba(0,0,0,.35);}
+  .thumb{
+    aspect-ratio:16/9;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#1e2b45,#101826);
+    display:grid;place-items:center;
+  }
+  .thumb svg{width:56px;height:56px;opacity:.9;}
+  .thumb .badge{
+    position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;
+    background:rgba(255,176,59,.92);color:#241a05;padding:3px 9px;border-radius:6px;
+  }
+  .thumb .badge.gray{background:rgba(120,140,175,.9);color:#0e1420;}
+  .card-body{padding:15px 16px 17px;display:flex;flex-direction:column;gap:7px;flex:1;}
+  .card-body h3{margin:0;font-size:16.5px;color:#fff;font-weight:700;}
+  .card-body .meta{font-size:12.5px;color:#7f8da6;letter-spacing:.3px;}
+  .card-body p{margin:0;font-size:13.5px;color:#a9b6cc;line-height:1.68;flex:1;}
+  .card-body .go{
+    font-size:13px;color:var(--gold);font-weight:700;display:inline-flex;gap:5px;align-items:center;
+  }
+  .empty{
+    grid-column:1/-1;text-align:center;color:var(--muted);font-size:14px;
+    padding:34px 0;border:1px dashed var(--line);border-radius:var(--radius);
+  }
+
+  /* ---------- list rows ---------- */
+  .list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);}
+  .row{
+    display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;
+    padding:16px 20px;border-bottom:1px solid #1e2839;
+  }
+  .row:last-child{border-bottom:0;}
+  .row .rank{
+    font-size:20px;font-weight:800;color:#33425f;font-variant-numeric:tabular-nums;
+  }
+  .row:nth-child(-n+3) .rank{color:var(--gold);}
+  .row h3{margin:0 0 3px;font-size:15.5px;color:#fff;}
+  .row p{margin:0;font-size:13px;color:#8d9bb3;}
+  .row .pill{
+    font-size:12px;color:#9fd8d1;background:rgba(67,216,201,.1);
+    border:1px solid rgba(67,216,201,.3);padding:4px 11px;border-radius:999px;white-space:nowrap;
+  }
+
+  /* ---------- article blocks ---------- */
+  .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;}
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;
+  }
+  .panel h3{margin:0 0 12px;font-size:17px;color:#fff;}
+  .panel p{margin:0 0 12px;font-size:14.5px;color:#aebbd0;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel ul{margin:0;padding-left:18px;color:#aebbd0;font-size:14.5px;}
+  .panel li{margin-bottom:9px;}
+  .panel li:last-child{margin-bottom:0;}
+  .panel strong{color:var(--gold-soft);}
+
+  /* ---------- download ---------- */
+  .dl{
+    display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between;
+    background:linear-gradient(120deg,#1a2439,#141c2b);
+    border:1px solid #2c3a56;border-radius:var(--radius);padding:26px 28px;
+  }
+  .dl h3{margin:0 0 6px;font-size:18px;color:#fff;}
+  .dl p{margin:0;font-size:14px;color:var(--muted);max-width:40em;}
+
+  /* ---------- footer ---------- */
+  footer.site{
+    border-top:1px solid var(--line);padding:34px 0 40px;background:#0b111b;
+  }
+  .foot{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;}
+  .foot .brand{max-width:34em;}
+  .foot .brand b{color:#fff;font-size:15px;display:block;margin-bottom:8px;}
+  .foot .brand p{margin:0;font-size:13px;color:#7b8aa3;line-height:1.8;}
+  .foot nav{display:flex;gap:22px;flex-wrap:wrap;font-size:13.5px;color:#8d9bb3;}
+  .foot nav a:hover{color:var(--gold-soft);}
+  .copy{
+    margin-top:22px;padding-top:18px;border-top:1px solid #1a2334;
+    font-size:12.5px;color:#63718a;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .poster{order:-1;max-width:460px;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .cols{grid-template-columns:1fr;}
+    .bar{flex-wrap:wrap;gap:12px;}
+    nav.main{order:3;width:100%;margin-left:0;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+    .search-mini{order:2;margin-left:auto;}
+  }
+  @media (max-width:620px){
+    .hero{padding:34px 0 30px;}
+    section{padding:38px 0;}
+    .cards{grid-template-columns:1fr;}
+    .filter{grid-template-columns:1fr;}
+    .search-mini input{width:96px;}
+    .row{grid-template-columns:34px 1fr;row-gap:6px;}
+    .row .pill{grid-column:2;justify-self:start;}
+    .panel{padding:20px;}
+    .dl{padding:22px;}
+    .logo b{font-size:14.5px;white-space:normal;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="555热播电视剧在线观看 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="#231a06"/></svg>
+      </span>
+      <b>555热播电视剧在线观看</b>
+    </a>
+    <form class="search-mini" role="search" onsubmit="return false;">
+      <input id="q" type="search" placeholder="搜剧名 / 题材" aria-label="搜索电视剧">
+      <button type="button" id="qbtn">搜索</button>
+    </form>
+    <nav class="main" aria-label="主导航">
+      <a href="#hot">热播剧集</a>
+      <a href="#rank">本周排行</a>
+      <a href="#guide">观剧分区</a>
+      <a href="#faq">常见问题</a>
+      <a href="#dl">客户端</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker"><i></i>剧集在线播放入口</span>
+        <h1>555热播电视剧在线观看</h1>
+        <p class="lead">近期热播剧集、口碑好剧与经典长剧集中呈现。按题材、更新状态与热度分区排列，点开即可进入播放页，边看边追不必反复翻找。555热播电视剧在线观看把选剧与观看放在同一条路径上。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#hot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#241a05"><path d="M8 5l11 7-11 7z"/></svg>
+            进入热播剧集
+          </a>
+          <a class="btn btn-ghost" href="#rank">查看本周排行</a>
+        </div>
+      </div>
+
+      <div class="poster" aria-hidden="true">
+        <div class="screen">
+          <div class="live"><i></i>正在热播</div>
+          <h3>今晚更新 · 连播两集</h3>
+          <small>都市 / 悬疑 / 古装 多题材同步</small>
+          <div class="bar-line"><span></span></div>
+        </div>
+        <div class="tags">
+          <span>高清画质</span>
+          <span>连续追剧</span>
+          <span>多端同步</span>
+          <span>按题材筛选</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOT LIST -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">正在更新</span>
+        <h2>热播剧集在线播放</h2>
+        <p>以下剧集按题材归入不同分区，可按类型快速缩小范围。列表中显示题材与更新状态，便于判断是否适合连续追看。</p>
+      </div>
+
+      <div class="filter">
+        <div class="chips" id="chips" role="group" aria-label="按题材筛选">
+          <button class="chip" data-type="all" aria-pressed="true">全部</button>
+          <button class="chip" data-type="都市" aria-pressed="false">都市</button>
+          <button class="chip" data-type="悬疑" aria-pressed="false">悬疑</button>
+          <button class="chip" data-type="古装" aria-pressed="false">古装</button>
+          <button class="chip" data-type="家庭" aria-pressed="false">家庭</button>
+        </div>
+        <div class="count">当前展示 <b id="num">6</b> 部</div>
+      </div>
+
+      <div class="cards" id="cards">
+
+        <article class="card" data-type="都市">
+          <div class="thumb">
+            <span class="badge">更新中</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffb03b" stroke-width="1.4"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>城市夜行线</h3>
+            <div class="meta">都市 · 更新至 18 集</div>
+            <p>以夜间通勤为线索串联几组都市人物，节奏偏生活流，适合下班后一集一集慢看。</p>
+            <span class="go">进入播放 ›</span>
+          </div>
+        </article>
+
+        <article class="card" data-type="悬疑">
+          <div class="thumb">
+            <span class="badge">更新中</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#43d8c9" stroke-width="1.4"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>雾港档案</h3>
+            <div class="meta">悬疑 · 更新至 12 集</div>
+            <p>围绕旧案卷宗展开的调查线，每集结尾留一个待解细节，适合喜欢边看边推的观众。</p>
+            <span class="go">进入播放 ›</span>
+          </div>
+        </article>
+
+        <article class="card" data-type="古装">
+          <div class="thumb">
+            <span class="badge">更新中</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffd27a" stroke-width="1.4"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>长风渡口</h3>
+            <div class="meta">古装 · 更新至 24 集</div>
+            <p>沿水运商路铺开的人物群像，服化与场景偏写实，长线剧情适合整段连看。</p>
+            <span class="go">进入播放 ›</span>
+          </div>
+        </article>
+
+        <article class="card" data-type="家庭">
+          <div class="thumb">
+            <span class="badge gray">已完结</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9aa7bf" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M6 10v10h12V10"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>小院四季</h3>
+            <div class="meta">家庭 · 全 32 集</div>
+            <p>三代同住一个院子的日常，冲突不激烈但细节扎实，适合与家人一起看完整部。</p>
+            <span class="go">进入播放 ›</span>
+          </div>
+        </article>
+
+        <article class="card" data-type="都市">
+          <div class="thumb">
+            <span class="badge gray">已完结</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9aa7bf" stroke-width="1.4"><path d="M4 19V7l8-4 8 4v12"/><path d="M4 19h16"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>合同之外</h3>
+            <div class="meta">都市 · 全 26 集</div>
+            <p>职场与合伙人关系为主轴，台词密度较高，适合想一次看完的观众集中播放。</p>
+            <span class="go">进入播放 ›</span>
+          </div>
+        </article>
+
+        <article class="card" data-type="悬疑">
+          <div class="thumb">
+            <span class="badge">更新中</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#43d8c9" stroke-width="1.4"><path d="M12 3l8 4v6c0 5-4 7-8 8-4-1-8-3-8-8V7z"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>第七封信</h3>
+            <div class="meta">悬疑 · 更新至 9 集</div>
+            <p>以信件为推进道具的推理剧，线索分布平均，适合跟着更新节奏一集集拆解。</p>
+            <span class="go">进入播放 ›</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RANK -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">本周热度</span>
+        <h2>本周热播排行</h2>
+        <p>排行按站内近期播放与收藏的变化顺序排列，仅反映观看倾向，不代表剧集质量评价。榜单每次更新后重新排序。</p>
+      </div>
+      <div class="list">
+        <div class="row">
+          <span class="rank">01</span>
+          <div><h3>长风渡口</h3><p>古装 · 更新至 24 集 · 长线剧情连看人数较多</p></div>
+          <span class="pill">更新中</span>
+        </div>
+        <div class="row">
+          <span class="rank">02</span>
+          <div><h3>雾港档案</h3><p>悬疑 · 更新至 12 集 · 单集讨论度集中在结尾</p></div>
+          <span class="pill">更新中</span>
+        </div>
+        <div class="row">
+          <span class="rank">03</span>
+          <div><h3>城市夜行线</h3><p>都市 · 更新至 18 集 · 通勤时段播放量较集中</p></div>
+          <span class="pill">更新中</span>
+        </div>
+        <div class="row">
+          <span class="rank">04</span>
+          <div><h3>小院四季</h3><p>家庭 · 全 32 集 · 已完结，适合一次性补完</p></div>
+          <span class="pill">已完结</span>
+        </div>
+        <div class="row">
+          <span class="rank">05</span>
+          <div><h3>第七封信</h3><p>悬疑 · 更新至 9 集 · 新剧，集数较短</p></div>
+          <span class="pill">更新中</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">观看方式</span>
+        <h2>怎么在555热播电视剧在线观看找到想看的剧</h2>
+        <p>从题材、更新状态与集数三个维度判断，比逐个点开更省时间。以下说明按实际浏览顺序排列。</p>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>先定题材，再看更新状态</h3>
+          <p>进入热播剧集区后，先用上方的题材按钮把范围收窄。都市、悬疑、古装、家庭四类覆盖了大部分日常观看需求，选择后列表会即时过滤。</p>
+          <p>接着看卡片上的更新状态：标为更新中的剧集适合边追边等，标为已完结的则可以按自己的节奏连续播放。若只打算看一两集，优先选择集数较短的更新剧。</p>
+          <p>不确定剧名时，可用页头搜索框输入剧名或题材关键词，再回到列表核对结果。<strong>555热播电视剧在线观看</strong>的搜索与筛选都在同一页面内完成，无需跳转。</p>
+        </div>
+        <div class="panel">
+          <h3>播放前值得确认的三点</h3>
+          <ul>
+            <li><strong>集数与进度：</strong>卡片标注的集数对应当前可看范围，追更时以此为准。</li>
+            <li><strong>连续观看：</strong>播放页支持自动接续下一集，适合整段连看。</li>
+            <li><strong>多端使用：</strong>同一账号下的观看记录可在不同设备间延续。</li>
+          </ul>
+          <p style="margin-top:14px;">若播放不顺畅，可先检查网络与浏览器版本，再刷新页面重试。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">常见问题</span>
+        <h2>关于在线观看的几点说明</h2>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>剧集多久更新一次</h3>
+          <p>更新频率由各剧集本身的排播决定，页面上的“更新至”集数会随可看范围同步变化。热门剧集通常在工作日晚间更新，具体以列表显示为准。</p>
+          <h3 style="margin-top:20px;">能否离线观看</h3>
+          <p>部分剧集支持在客户端内缓存后观看，缓存范围与可用清晰度以播放页提示为准。网页端以在线播放为主。</p>
+        </div>
+        <div class="panel">
+          <h3>找不到某部剧怎么办</h3>
+          <p>先确认剧名写法是否一致，再尝试用题材关键词检索。若列表中仍未出现，说明该剧暂未纳入当前可看范围，可在后续更新后再次查看。</p>
+          <h3 style="margin-top:20px;">关于页面内容</h3>
+          <p>555热播电视剧在线观看提供剧集索引与播放入口，剧集介绍由编辑依据公开信息编写，用于辅助选择，不替代剧集本身的内容。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="dl">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h3>客户端下载</h3>
+          <p>客户端支持观看记录同步与部分剧集缓存，安装包仍在准备中，入口开放后可直接获取。网页端播放不受影响。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand">
+        <b>555热播电视剧在线观看</b>
+        <p>汇集近期热播与经典剧目的在线播放入口，按题材与更新状态分区呈现，帮助观众用更短的时间找到下一部要看的剧。</p>
+      </div>
+      <nav aria-label="页尾导航">
+        <a href="#hot">热播剧集</a>
+        <a href="#rank">本周排行</a>
+        <a href="#guide">观剧分区</a>
+        <a href="#faq">常见问题</a>
+        <a href="#top">返回顶部</a>
+      </nav>
+    </div>
+    <div class="copy">
+      <span>555热播电视剧在线观看 · 剧集索引与播放入口</span>
+      <span>页面内容以实际可看范围为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('#chips .chip');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cards .card'));
+  var num = document.getElementById('num');
+
+  function apply(type){
+    var shown = 0;
+    cards.forEach(function(c){
+      var ok = (type === 'all' || c.getAttribute('data-type') === type);
+      c.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    num.textContent = shown;
+    var empty = document.querySelector('.empty');
+    if(shown === 0){
+      if(!empty){
+        var d = document.createElement('div');
+        d.className = 'empty';
+        d.textContent = '该题材下暂无展示剧集，可切换其他类型查看。';
+        document.getElementById('cards').appendChild(d);
+      }
+    } else if(empty){
+      empty.remove();
+    }
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      apply(btn.getAttribute('data-type'));
+    });
+  });
+
+  var q = document.getElementById('q');
+  var qbtn = document.getElementById('qbtn');
+
+  function doSearch(){
+    var kw = (q.value || '').trim();
+    if(!kw){ apply('all'); return; }
+    var typeHit = null, shown = 0;
+    cards.forEach(function(c){
+      var text = c.textContent;
+      var hit = text.indexOf(kw) > -1;
+      if(hit) typeHit = typeHit || c.getAttribute('data-type');
+      c.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+    });
+    if(typeHit){
+      chips.forEach(function(b){
+        b.setAttribute('aria-pressed', b.getAttribute('data-type') === typeHit ? 'true' : 'false');
+      });
+    }
+    num.textContent = shown;
+    var empty = document.querySelector('.empty');
+    if(shown === 0){
+      if(!empty){
+        var d = document.createElement('div');
+        d.className = 'empty';
+        d.textContent = '没有匹配的剧集，可换个关键词或清空搜索查看全部。';
+        document.getElementById('cards').appendChild(d);
+      }
+    } else if(empty){
+      empty.remove();
+    }
+  }
+
+  qbtn.addEventListener('click', doSearch);
+  q.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  q.addEventListener('input', function(){ if(!q.value.trim()) apply('all'); });
+})();
+</script>
+</body>
+</html>
