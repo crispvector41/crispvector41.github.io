@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心御梦子-御梦子糖心图片作品_糖心御梦子写真合集</title>
+<meta name="description" content="糖心御梦子主题首页，汇集御梦子糖心写真图片、作品合集与风格档案，梳理糖心御梦子的内容脉络与浏览入口，方便按系列、风格与更新时间查看。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232a1b2e'/%3E%3Cpath d='M32 46s-14-8.6-14-18a8 8 0 0 1 14-5.3A8 8 0 0 1 46 28c0 9.4-14 18-14 18z' fill='%23f39bb5'/%3E%3Ccircle cx='32' cy='26' r='3' fill='%23fff3f6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --plum:#2a1b2e;
+  --plum-soft:#3c2742;
+  --rose:#f39bb5;
+  --rose-deep:#e0698c;
+  --cream:#fff8f4;
+  --paper:#fffdfb;
+  --ink:#2c2229;
+  --ink-soft:#6a5a63;
+  --line:#efdfe4;
+  --radius:18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,248,244,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:12px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.brand-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(140deg,var(--plum),var(--plum-soft));
+  display:grid;place-items:center;
+}
+.brand-text{
+  font-size:19px;font-weight:700;letter-spacing:.5px;
+  color:var(--plum);white-space:nowrap;
+}
+.nav{display:flex;gap:6px;flex-wrap:wrap;}
+.nav a{
+  font-size:14.5px;color:var(--ink-soft);
+  padding:7px 12px;border-radius:999px;
+  transition:.2s;
+}
+.nav a:hover{background:#fbe7ee;color:var(--rose-deep);}
+.nav a.cta{
+  background:var(--plum);color:#fff;font-weight:600;
+}
+.nav a.cta:hover{background:var(--rose-deep);color:#fff;}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:56px 0 48px;
+  background:
+    radial-gradient(680px 380px at 88% -10%,#fbd9e3 0%,rgba(251,217,227,0) 70%),
+    radial-gradient(520px 320px at 4% 110%,#f6e6ee 0%,rgba(246,230,238,0) 70%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:44px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1.5px;
+  color:var(--rose-deep);font-weight:600;
+  background:#fdeaf1;border:1px solid #f8d5e1;
+  padding:5px 14px;border-radius:999px;
+}
+h1{
+  font-size:clamp(32px,4.6vw,50px);
+  line-height:1.2;
+  margin:18px 0 16px;
+  color:var(--plum);
+  letter-spacing:2px;
+  font-weight:800;
+}
+.hero-lead{
+  font-size:16.5px;color:var(--ink-soft);
+  max-width:34em;margin:0 0 26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;
+  font-size:15px;font-weight:600;
+  transition:.22s;
+}
+.btn-primary{background:var(--rose-deep);color:#fff;box-shadow:0 10px 24px -10px rgba(224,105,140,.9);}
+.btn-primary:hover{background:var(--plum);}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--plum);}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose-deep);}
+.btn[aria-disabled="true"]{
+  background:#efe6ea;color:#a08e97;
+  pointer-events:none;cursor:default;box-shadow:none;
+}
+.hero-figure{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:20px;
+  box-shadow:0 24px 48px -32px rgba(60,39,66,.5);
+}
+.hero-figure figcaption{
+  font-size:13px;color:var(--ink-soft);text-align:center;margin-top:12px;
+}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;margin-top:22px;
+}
+.stat{
+  background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:12px 10px;text-align:center;
+}
+.stat b{display:block;font-size:19px;color:var(--plum);}
+.stat span{font-size:12px;color:var(--ink-soft);}
+
+/* section base */
+section{padding:54px 0;}
+.sec-head{max-width:44em;margin-bottom:28px;}
+.sec-kicker{
+  font-size:13px;font-weight:700;letter-spacing:2px;
+  color:var(--rose-deep);margin:0 0 8px;
+}
+h2{
+  font-size:clamp(23px,2.8vw,30px);
+  margin:0 0 10px;color:var(--plum);font-weight:800;
+}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15.5px;}
+
+/* collections cards */
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:.24s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -28px rgba(60,39,66,.55);}
+.card-art{
+  aspect-ratio:16/10;
+  background:linear-gradient(150deg,#fbe3ec,#f6eef3);
+  display:grid;place-items:center;
+  border-bottom:1px solid var(--line);
+}
+.card-art svg{width:64%;}
+.card-body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column;}
+.card-body h3{
+  margin:0 0 6px;font-size:17.5px;color:var(--plum);font-weight:700;
+}
+.tag{
+  display:inline-block;font-size:12px;color:var(--rose-deep);
+  background:#fdeaf1;border-radius:999px;padding:2px 10px;margin-bottom:10px;
+  align-self:flex-start;
+}
+.card-body p{margin:0 0 14px;font-size:14.5px;color:var(--ink-soft);flex:1;}
+.card-link{font-size:14px;font-weight:600;color:var(--rose-deep);}
+.card-link:hover{color:var(--plum);}
+
+/* archive list */
+.archive{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.archive-row{
+  display:grid;grid-template-columns:96px 1fr auto;
+  gap:18px;align-items:center;
+  padding:18px 22px;
+  border-bottom:1px solid var(--line);
+}
+.archive-row:last-child{border-bottom:none;}
+.archive-row:hover{background:#fff6f9;}
+.code{
+  font-size:13px;font-weight:700;color:var(--rose-deep);
+  letter-spacing:.5px;
+}
+.archive-row h3{margin:0 0 2px;font-size:16px;color:var(--plum);font-weight:700;}
+.archive-row p{margin:0;font-size:14px;color:var(--ink-soft);}
+.year{font-size:13px;color:#a8959e;white-space:nowrap;}
+
+/* about / notes */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;
+}
+.prose p{margin:0 0 16px;font-size:15.5px;color:#4a3c44;}
+.prose strong{color:var(--plum);}
+.note-list{display:grid;gap:14px;}
+.note{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:14px;padding:16px 18px;
+}
+.note h3{margin:0 0 6px;font-size:15.5px;color:var(--plum);}
+.note p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* search */
+.search-bar{
+  display:flex;gap:10px;margin:0 0 22px;flex-wrap:wrap;
+}
+.search-bar input{
+  flex:1;min-width:200px;
+  padding:12px 18px;font-size:15px;
+  border:1px solid var(--line);border-radius:999px;
+  background:#fff;color:var(--ink);
+  font-family:inherit;
+}
+.search-bar input:focus{outline:2px solid #f8c9d9;border-color:var(--rose);}
+.search-bar button{
+  padding:12px 24px;border-radius:999px;border:none;
+  background:var(--plum);color:#fff;font-size:15px;font-weight:600;
+  cursor:pointer;font-family:inherit;
+}
+.search-bar button:hover{background:var(--rose-deep);}
+#search-hint{font-size:14px;color:var(--rose-deep);min-height:1.4em;margin:0 0 14px;}
+.no-result{display:none;padding:22px;text-align:center;color:var(--ink-soft);}
+
+/* footer */
+footer{
+  background:var(--plum);color:#e8d9e0;
+  padding:42px 0 26px;margin-top:20px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;
+  padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.14);
+}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.footer-brand .brand-text{color:#fff;}
+footer p{font-size:14px;color:#c8b2bd;margin:0;}
+footer h4{font-size:14px;color:#fff;margin:0 0 12px;letter-spacing:1px;}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;}
+footer ul a{font-size:14px;color:#c8b2bd;}
+footer ul a:hover{color:var(--rose);}
+.copyright{
+  padding-top:20px;font-size:13px;color:#a38e99;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;gap:26px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:10px;}
+  .nav{gap:2px;}
+  .nav a{padding:6px 10px;font-size:14px;}
+  .hero{padding:38px 0 34px;}
+  h1{letter-spacing:1px;}
+  section{padding:40px 0;}
+  .cards{grid-template-columns:1fr;}
+  .archive-row{grid-template-columns:1fr;gap:4px;padding:16px 18px;}
+  .year{justify-self:start;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero-stats{grid-template-columns:1fr 1fr 1fr;gap:8px;}
+  .stat b{font-size:16px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M12 20S4 15.2 4 9.6A4.6 4.6 0 0 1 12 6.4 4.6 4.6 0 0 1 20 9.6C20 15.2 12 20 12 20Z" fill="#f39bb5"/>
+          <circle cx="12" cy="10" r="1.7" fill="#fff3f6"/>
+        </svg>
+      </span>
+      <span class="brand-text">糖心御梦子</span>
+    </div>
+    <nav class="nav" aria-label="主导航">
+      <a href="#collections">写真系列</a>
+      <a href="#archive">作品档案</a>
+      <a href="#about">风格解读</a>
+      <a href="#search">站内查找</a>
+      <a href="#collections" class="cta">浏览合集</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">御梦子 · 糖心图片档案</span>
+      <h1>糖心御梦子</h1>
+      <p class="hero-lead">糖心御梦子是一组以柔和粉调与日常感镜头为核心的写真内容。本页按系列、风格与更新时间把御梦子糖心的图片作品整理成可浏览的目录，方便你从第一张封面开始，顺着清晰的线索找到想看的那一组。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#collections">进入写真系列</a>
+        <a class="btn btn-ghost" href="#archive">查看作品档案</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>3</b><span>主题系列</span></div>
+        <div class="stat"><b>6</b><span>已归档作品</span></div>
+        <div class="stat"><b>4</b><span>风格标签</span></div>
+      </div>
+    </div>
+    <figure class="hero-figure" style="margin:0;">
+      <svg viewBox="0 0 300 210" role="img" aria-label="糖心御梦子主题插画：粉调相框与心形装饰">
+        <rect width="300" height="210" rx="16" fill="#fdeef4"/>
+        <rect x="26" y="26" width="120" height="150" rx="12" fill="#fff" stroke="#f6d3e0"/>
+        <circle cx="86" cy="78" r="26" fill="#f8c4d5"/>
+        <path d="M86 138c-14 0-24-8-24-19 0-9 8-13 14-13 5 0 8 2 10 5 2-3 5-5 10-5 6 0 14 4 14 13 0 11-10 19-24 19Z" fill="#f39bb5"/>
+        <rect x="170" y="34" width="104" height="66" rx="10" fill="#fff" stroke="#f6d3e0"/>
+        <rect x="184" y="50" width="58" height="7" rx="3.5" fill="#f0b7c9"/>
+        <rect x="184" y="66" width="76" height="6" rx="3" fill="#f7dbe5"/>
+        <rect x="184" y="80" width="48" height="6" rx="3" fill="#f7dbe5"/>
+        <rect x="170" y="112" width="104" height="64" rx="10" fill="#3c2742"/>
+        <circle cx="200" cy="144" r="14" fill="#f39bb5"/>
+        <rect x="224" y="132" width="36" height="6" rx="3" fill="#c9a7b6"/>
+        <rect x="224" y="146" width="26" height="6" rx="3" fill="#8d7180"/>
+        <path d="M262 60l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#f39bb5" opacity=".7"/>
+      </svg>
+      <figcaption>糖心御梦子 · 主题视觉示意</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="collections">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">写真系列</p>
+      <h2>按系列进入糖心御梦子的图片</h2>
+      <p>每个系列对应一种拍摄氛围，封面与说明来自该系列本身。先看整体风格，再决定进入哪一组，是浏览糖心御梦子内容最省时间的方式。</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 200 120">
+            <rect x="18" y="18" width="164" height="84" rx="10" fill="#fff" stroke="#f6d3e0"/>
+            <circle cx="66" cy="58" r="22" fill="#f8c4d5"/>
+            <path d="M66 94c-11 0-19-6-19-15 0-7 6-10 11-10 4 0 6 1 8 4 2-3 4-4 8-4 5 0 11 3 11 10 0 9-8 15-19 15Z" fill="#f39bb5"/>
+            <rect x="112" y="40" width="52" height="7" rx="3.5" fill="#f0b7c9"/>
+            <rect x="112" y="56" width="44" height="6" rx="3" fill="#f7dbe5"/>
+            <rect x="112" y="70" width="52" height="6" rx="3" fill="#f7dbe5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="tag">日常粉调</span>
+          <h3>午后柔光</h3>
+          <p>窗边自然光与浅粉布景组合，画面以近景为主，突出面部与手部细节，是糖心御梦子里最容易被当作入门的一组。</p>
+          <a class="card-link" href="#archive">查看该系列记录 →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 200 120">
+            <rect x="18" y="18" width="164" height="84" rx="10" fill="#3c2742"/>
+            <circle cx="62" cy="56" r="20" fill="#f39bb5"/>
+            <rect x="94" y="36" width="66" height="7" rx="3.5" fill="#c9a7b6"/>
+            <rect x="94" y="52" width="50" height="6" rx="3" fill="#8d7180"/>
+            <rect x="94" y="66" width="66" height="6" rx="3" fill="#8d7180"/>
+            <path d="M160 74l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#f39bb5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="tag">深色对比</span>
+          <h3>夜色轮廓</h3>
+          <p>深紫背景压住整体亮度，只用一盏侧光勾勒线条。御梦子糖心在这一组里的姿态更克制，适合喜欢强对比画面的浏览者。</p>
+          <a class="card-link" href="#archive">查看该系列记录 →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 200 120">
+            <rect x="18" y="18" width="164" height="84" rx="10" fill="#fff" stroke="#f6d3e0"/>
+            <rect x="34" y="34" width="52" height="52" rx="8" fill="#fdeef4"/>
+            <path d="M60 74c-8 0-14-4.6-14-10.8 0-4.8 4.2-7.2 8-7.2 2.6 0 4.6 1.2 6 3 1.4-1.8 3.4-3 6-3 3.8 0 8 2.4 8 7.2C74 69.4 68 74 60 74Z" fill="#f39bb5"/>
+            <rect x="100" y="40" width="60" height="7" rx="3.5" fill="#f0b7c9"/>
+            <rect x="100" y="56" width="46" height="6" rx="3" fill="#f7dbe5"/>
+            <rect x="100" y="70" width="60" height="6" rx="3" fill="#f7dbe5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="tag">轻调特写</span>
+          <h3>甜心特写</h3>
+          <p>以局部特写与浅景深为主，背景几乎全部虚化。这组糖心御梦子更强调质感与色彩，适合放大后逐张细看。</p>
+          <a class="card-link" href="#archive">查看该系列记录 →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="archive" style="background:#fff4f8;">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">作品档案</p>
+      <h2>糖心御梦子的已归档条目</h2>
+      <p>按编号与时间排列，每条只保留系列名、风格标签和一句定位说明。想了解某一组从哪里开始看，这一栏比封面图更直接。</p>
+    </div>
+    <div class="archive">
+      <div class="archive-row">
+        <span class="code">YMZ-01</span>
+        <div>
+          <h3>午后柔光</h3>
+          <p>窗边自然光系列，近景与半身为主，整体偏浅粉。</p>
+        </div>
+        <span class="year">日常粉调</span>
+      </div>
+      <div class="archive-row">
+        <span class="code">YMZ-02</span>
+        <div>
+          <h3>夜色轮廓</h3>
+          <p>深色背景与单侧布光，强调线条和明暗关系。</p>
+        </div>
+        <span class="year">深色对比</span>
+      </div>
+      <div class="archive-row">
+        <span class="code">YMZ-03</span>
+        <div>
+          <h3>甜心特写</h3>
+          <p>局部特写与浅景深，画面留白较多，细节清晰。</p>
+        </div>
+        <span class="year">轻调特写</span>
+      </div>
+      <div class="archive-row">
+        <span class="code">YMZ-04</span>
+        <div>
+          <h3>午后柔光 · 补充</h3>
+          <p>同一场景的补充镜头，角度更偏侧面。</p>
+        </div>
+        <span class="year">日常粉调</span>
+      </div>
+      <div class="archive-row">
+        <span class="code">YMZ-05</span>
+        <div>
+          <h3>夜色轮廓 · 补充</h3>
+          <p>增加一组低角度构图，背景层次更多。</p>
+        </div>
+        <span class="year">深色对比</span>
+      </div>
+      <div class="archive-row">
+        <span class="code">YMZ-06</span>
+        <div>
+          <h3>甜心特写 · 补充</h3>
+          <p>新增手部与饰品细节，适合放大浏览。</p>
+        </div>
+        <span class="year">轻调特写</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">风格解读</p>
+      <h2>为什么糖心御梦子看起来是这种质感</h2>
+      <p>把画面拆成色彩、光线和构图三件事，比单纯翻图更容易理解这组内容的取向。</p>
+    </div>
+    <div class="split">
+      <div class="prose">
+        <p><strong>色彩：</strong>糖心御梦子的主色集中在粉、米白和浅紫之间，几乎不出现高饱和的对比色。这种配色让画面整体偏软，也让相邻两张图之间的过渡更自然。</p>
+        <p><strong>光线：</strong>日常粉调系列使用窗边散射光，阴影边界柔和；深色对比系列则只保留一盏侧光，把主体从背景里推出来。两种光线决定了同一主题下完全不同的观感。</p>
+        <p><strong>构图：</strong>御梦子糖心的画面多以主体居中或偏一侧处理，留白比例较高。近景多、全身少，是有意为之的选择，目的是让视线停留在细节上。</p>
+        <p>理解这三点之后，再看糖心御梦子的作品档案，就能快速判断某一组属于哪条路线，也更容易找到自己想继续看的方向。</p>
+      </div>
+      <div class="note-list">
+        <div class="note">
+          <h3>浏览顺序建议</h3>
+          <p>先看「午后柔光」建立整体印象，再进入「夜色轮廓」感受对比，最后用「甜心特写」补细节。</p>
+        </div>
+        <div class="note">
+          <h3>图片查看方式</h3>
+          <p>特写类适合在较大屏幕上放大查看，日常粉调系列在手机上按顺序翻看更连贯。</p>
+        </div>
+        <div class="note">
+          <h3>内容更新说明</h3>
+          <p>新条目会以 YMZ 编号追加到档案末尾，并按原系列归入对应风格标签。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="search" style="background:#fff4f8;">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-kicker">站内查找</p>
+      <h2>在糖心御梦子的档案里找一组</h2>
+      <p>输入系列名或风格标签，例如「夜色」「特写」「粉调」，下方档案会立即筛选出匹配条目。</p>
+    </div>
+    <form class="search-bar" role="search" onsubmit="return false;">
+      <label for="q" style="position:absolute;left:-9999px;">搜索系列或风格</label>
+      <input id="q" type="search" placeholder="输入系列名或风格标签…" autocomplete="off">
+      <button type="button" id="search-btn">筛选</button>
+    </form>
+    <p id="search-hint" role="status" aria-live="polite"></p>
+    <div class="archive" id="search-archive">
+      <div class="archive-row" data-key="午后柔光 日常粉调 窗边 近景">
+        <span class="code">YMZ-01</span>
+        <div><h3>午后柔光</h3><p>窗边自然光系列，近景与半身为主，整体偏浅粉。</p></div>
+        <span class="year">日常粉调</span>
+      </div>
+      <div class="archive-row" data-key="夜色轮廓 深色对比 侧光 线条">
+        <span class="code">YMZ-02</span>
+        <div><h3>夜色轮廓</h3><p>深色背景与单侧布光，强调线条和明暗关系。</p></div>
+        <span class="year">深色对比</span>
+      </div>
+      <div class="archive-row" data-key="甜心特写 轻调特写 局部 浅景深">
+        <span class="code">YMZ-03</span>
+        <div><h3>甜心特写</h3><p>局部特写与浅景深，画面留白较多，细节清晰。</p></div>
+        <span class="year">轻调特写</span>
+      </div>
+      <div class="archive-row" data-key="午后柔光 补充 日常粉调 侧面">
+        <span class="code">YMZ-04</span>
+        <div><h3>午后柔光 · 补充</h3><p>同一场景的补充镜头，角度更偏侧面。</p></div>
+        <span class="year">日常粉调</span>
+      </div>
+      <div class="archive-row" data-key="夜色轮廓 补充 深色对比 低角度">
+        <span class="code">YMZ-05</span>
+        <div><h3>夜色轮廓 · 补充</h3><p>增加一组低角度构图，背景层次更多。</p></div>
+        <span class="year">深色对比</span>
+      </div>
+      <div class="archive-row" data-key="甜心特写 补充 轻调特写 饰品">
+        <span class="code">YMZ-06</span>
+        <div><h3>甜心特写 · 补充</h3><p>新增手部与饰品细节，适合放大浏览。</p></div>
+        <span class="year">轻调特写</span>
+      </div>
+    </div>
+    <p class="no-result" id="no-result">没有匹配的条目，试试「粉调」「特写」或「夜色」。</p>
+    <div style="margin-top:26px;">
+      <a class="btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 20S4 15.2 4 9.6A4.6 4.6 0 0 1 12 6.4 4.6 4.6 0 0 1 20 9.6C20 15.2 12 20 12 20Z" fill="#f39bb5"/>
+              <circle cx="12" cy="10" r="1.7" fill="#fff3f6"/>
+            </svg>
+          </span>
+          <span class="brand-text">糖心御梦子</span>
+        </div>
+        <p>糖心御梦子主题首页，收录御梦子糖心的写真系列、作品档案与风格解读，按系列与标签整理，方便逐组浏览。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#collections">写真系列</a></li>
+          <li><a href="#archive">作品档案</a></li>
+          <li><a href="#about">风格解读</a></li>
+          <li><a href="#search">站内查找</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>系列标签</h4>
+        <ul>
+          <li><a href="#archive">日常粉调</a></li>
+          <li><a href="#archive">深色对比</a></li>
+          <li><a href="#archive">轻调特写</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 糖心御梦子 · 内容目录</span>
+      <span>本页为糖心御梦子主题索引页面</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('q');
+  var btn = document.getElementById('search-btn');
+  var hint = document.getElementById('search-hint');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#search-archive .archive-row'));
+  var noResult = document.getElementById('no-result');
+
+  function doFilter(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    rows.forEach(function(row){
+      var key = (row.getAttribute('data-key') || '').toLowerCase();
+      var text = row.textContent.toLowerCase();
+      var hit = !kw || key.indexOf(kw) > -1 || text.indexOf(kw) > -1;
+      row.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+    });
+    if(!kw){
+      hint.textContent = '共 ' + rows.length + ' 条已归档记录。';
+    }else{
+      hint.textContent = '“' + input.value.trim() + '”匹配到 ' + shown + ' 条记录。';
+    }
+    noResult.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  btn.addEventListener('click', doFilter);
+  input.addEventListener('input', doFilter);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doFilter(); }
+  });
+  hint.textContent = '共 ' + rows.length + ' 条已归档记录。';
+})();
+</script>
+
+</body>
+  </html>
