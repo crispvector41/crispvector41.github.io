@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛主题大赛寸止挑战-寸止挑战每日大赛主题_挑战玩法与热点围观</title>
+<meta name="description" content="每日大赛主题大赛寸止挑战热点内容页，汇总每日大赛主题下的寸止挑战玩法看点、围观入口与热门主题卡片，帮助访问者快速了解每日大赛主题大赛寸止挑战的热度走向与内容分布。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a2b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ffb703' stroke-width='4'/%3E%3Cpath d='M32 20v12l9 5' fill='none' stroke='%23ffb703' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#131a2b;
+  --ink-2:#1d2740;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --gold:#ffb703;
+  --gold-deep:#f08c00;
+  --red:#e5484d;
+  --line:#e3ded3;
+  --muted:#6b7280;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* 头部 */
+.site-head{
+  position:sticky;top:0;z-index:50;
+  background:rgba(19,26,43,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,183,3,.25);
+}
+.head-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;color:#fff}
+.logo-mark{
+  width:38px;height:38px;flex:0 0 38px;
+  display:grid;place-items:center;
+  background:linear-gradient(145deg,#ffb703,#f08c00);
+  border-radius:11px;
+  box-shadow:0 4px 14px rgba(255,183,3,.35);
+}
+.logo-text{font-size:16px;font-weight:800;letter-spacing:.5px;line-height:1.3}
+.logo-text small{display:block;font-size:11px;font-weight:500;color:var(--gold);letter-spacing:1.5px}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  color:#cfd6e6;font-size:14px;padding:7px 12px;border-radius:9px;
+  transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,183,3,.16);color:var(--gold)}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(circle at 82% 12%,rgba(255,183,3,.18),transparent 46%),
+    radial-gradient(circle at 8% 90%,rgba(229,72,77,.16),transparent 44%),
+    var(--ink);
+  color:#fff;padding:56px 0 48px;
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:40px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1px;color:var(--gold);
+  background:rgba(255,183,3,.12);
+  border:1px solid rgba(255,183,3,.35);
+  padding:5px 12px;border-radius:99px;margin-bottom:18px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+h1{
+  font-size:clamp(26px,4vw,44px);
+  line-height:1.28;font-weight:900;letter-spacing:.5px;
+}
+h1 .hl{color:var(--gold)}
+.hero-lead{
+  margin-top:16px;font-size:15.5px;color:#c6cee0;max-width:36em;
+}
+.hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:11px;font-size:15px;font-weight:700;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:linear-gradient(145deg,#ffb703,#f08c00);color:#1a1200;box-shadow:0 8px 22px rgba(255,183,3,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,183,3,.42)}
+.btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.24);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.hero-stats{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+.hero-stats div{font-size:12.5px;color:#9aa5bd;letter-spacing:.5px}
+.hero-stats strong{display:block;font-size:22px;color:#fff;font-weight:800;line-height:1.4}
+
+/* 首屏计时卡片 */
+.timer-card{
+  background:linear-gradient(160deg,#1f2a44,#151d31);
+  border:1px solid rgba(255,183,3,.28);
+  border-radius:22px;padding:26px 24px;
+  box-shadow:0 24px 48px rgba(0,0,0,.35);
+}
+.timer-card h2{font-size:14px;font-weight:600;color:#9aa5bd;letter-spacing:1px}
+.timer-face{
+  display:flex;align-items:baseline;gap:6px;margin:14px 0 18px;
+  font-variant-numeric:tabular-nums;
+}
+.timer-face span{font-size:46px;font-weight:900;color:var(--gold);line-height:1}
+.timer-face small{font-size:15px;color:#8b97b1;font-weight:600}
+.timer-bar{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.timer-bar i{display:block;height:100%;width:62%;border-radius:99px;background:linear-gradient(90deg,#ffb703,#e5484d)}
+.timer-meta{display:flex;justify-content:space-between;font-size:12px;color:#8b97b1;margin-top:10px}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.tag{
+  font-size:12px;padding:4px 10px;border-radius:99px;
+  background:rgba(255,183,3,.14);color:var(--gold);border:1px solid rgba(255,183,3,.3);
+}
+
+/* 通用区块 */
+section{padding:56px 0}
+.sec-head{margin-bottom:28px;max-width:44em}
+.sec-kicker{font-size:12.5px;font-weight:700;letter-spacing:2px;color:var(--gold-deep);text-transform:uppercase}
+.sec-head h2{font-size:clamp(21px,2.6vw,28px);font-weight:900;margin-top:6px;letter-spacing:.3px}
+.sec-head p{color:var(--muted);font-size:15px;margin-top:10px}
+
+/* 主题卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:10px;
+  transition:.22s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,183,3,.7);box-shadow:0 14px 30px rgba(19,26,43,.08)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card-no{font-size:12px;font-weight:800;color:var(--gold-deep);letter-spacing:1px}
+.badge{font-size:11.5px;padding:3px 9px;border-radius:99px;background:#fff4dc;color:#946000;font-weight:700}
+.badge.hot{background:#fdeaea;color:#b3252a}
+.card h3{font-size:17px;font-weight:800;line-height:1.45}
+.card p{font-size:14px;color:#4b5563;line-height:1.7}
+.card-foot{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.card-foot a{color:var(--gold-deep);font-weight:700}
+.card-foot a:hover{text-decoration:underline}
+
+/* 玩法说明双栏 */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+}
+.panel h3{font-size:18px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.panel h3 svg{flex:0 0 22px}
+.panel p{font-size:14.5px;color:#4b5563;margin-bottom:10px}
+.checklist{list-style:none;display:grid;gap:11px;margin-top:6px}
+.checklist li{display:flex;gap:10px;font-size:14.5px;color:#374151}
+.checklist li b{color:var(--ink)}
+.checklist .num{
+  flex:0 0 22px;height:22px;border-radius:7px;background:#fff4dc;color:var(--gold-deep);
+  font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:2px;
+}
+
+/* 热点列表 */
+.list{display:grid;gap:12px}
+.list-item{
+  display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 18px;
+  transition:.2s;
+}
+.list-item:hover{border-color:rgba(255,183,3,.7);background:#fffdf7}
+.rank{
+  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
+  font-size:14px;font-weight:900;background:#f0ece2;color:#8a7f65;
+}
+.rank.top{background:linear-gradient(145deg,#ffb703,#f08c00);color:#241600}
+.list-item h3{font-size:15.5px;font-weight:700;line-height:1.5}
+.list-item h3 span{font-size:12px;color:var(--muted);font-weight:500;margin-left:8px}
+.list-item time{font-size:12.5px;color:var(--muted);white-space:nowrap}
+
+/* 搜索 */
+.filter-box{
+  background:var(--ink);color:#fff;border-radius:22px;padding:34px 30px;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;
+}
+.filter-box h2{font-size:21px;font-weight:900;line-height:1.4}
+.filter-box p{font-size:14px;color:#aeb8cd;margin-top:8px}
+.search-form{display:flex;gap:10px;flex-wrap:wrap}
+.search-form input{
+  flex:1 1 190px;min-width:0;padding:12px 16px;border-radius:11px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);color:#fff;font-size:14.5px;outline:none;
+  font-family:inherit;
+}
+.search-form input::placeholder{color:#98a3ba}
+.search-form input:focus{border-color:var(--gold);background:rgba(255,255,255,.13)}
+.search-form button{
+  padding:12px 22px;border-radius:11px;border:none;cursor:pointer;
+  background:linear-gradient(145deg,#ffb703,#f08c00);color:#1a1200;font-weight:800;font-size:14.5px;
+  font-family:inherit;
+}
+.search-form button:hover{filter:brightness(1.06)}
+.search-hint{font-size:12.5px;color:#8b97b1;margin-top:10px;min-height:1.4em}
+
+/* 下载条 */
+.download-band{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  background:linear-gradient(120deg,#fff4dc,#fdf7ea);
+  border:1px solid #f0dcae;border-radius:var(--radius);padding:24px 26px;
+}
+.download-band h2{font-size:18px;font-weight:900}
+.download-band p{font-size:14px;color:#6b5a34;margin-top:4px}
+.btn-disabled{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:11px;font-size:15px;font-weight:800;
+  background:linear-gradient(145deg,#ffb703,#f08c00);color:#1a1200;
+  pointer-events:none;opacity:.92;cursor:default;
+}
+
+/* 页尾 */
+footer{background:var(--ink);color:#aeb8cd;padding:44px 0 26px;margin-top:20px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.foot-brand p{font-size:13.5px;color:#8b97b1;margin-top:12px;max-width:30em;line-height:1.75}
+.foot-col h3{font-size:13px;color:var(--gold);letter-spacing:1.5px;font-weight:700;margin-bottom:12px}
+.foot-col a{display:block;font-size:13.5px;color:#aeb8cd;padding:4px 0}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);margin-top:32px;padding-top:18px;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#78829a;
+}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .cards{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:20px}
+  .filter-box{grid-template-columns:1fr;padding:26px 22px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .hero{padding:36px 0 34px}
+  h1{font-size:26px}
+  section{padding:40px 0}
+  .cards{grid-template-columns:1fr}
+  .list-item{grid-template-columns:auto 1fr;gap:10px 12px}
+  .list-item time{grid-column:2;font-size:12px}
+  .timer-face span{font-size:38px}
+  .foot-grid{grid-template-columns:1fr}
+  .head-inner{padding:10px 0}
+  .logo-text{font-size:14px}
+  .nav a{font-size:13px;padding:6px 9px}
+  .download-band{padding:20px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="每日大赛主题大赛寸止挑战 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="8.5" stroke="#1a1200" stroke-width="2"/>
+          <path d="M12 7.5V12l3.4 1.9" stroke="#1a1200" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">每日大赛主题大赛寸止挑战<small>DAILY · THEME · CHALLENGE</small></span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#themes">今日主题</a>
+      <a href="#howto">寸止玩法</a>
+      <a href="#hot">热点围观</a>
+      <a href="#search">快速查找</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>热点围观 · 每日更新</span>
+        <h1>每日大赛主题大赛寸止挑战</h1>
+        <p class="hero-lead">
+          每日大赛主题大赛寸止挑战围绕当天的主题设定，把讨论焦点收束到“寸止”式的节奏控制上：在限定时间内完成主题看点，到点即止，留下悬念与回味。这里汇总今日主题卡、玩法要点与围观入口，一屏看懂当天热点。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#themes">
+            看今日主题
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#howto">寸止玩法要点</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>每日</strong>主题更新节奏</div>
+          <div><strong>3</strong>类主题卡片分区</div>
+          <div><strong>寸止</strong>到点即止的看点结构</div>
+        </div>
+      </div>
+
+      <aside class="timer-card" aria-label="今日主题节奏示意">
+        <h2>今日主题节奏示意</h2>
+        <div class="timer-face"><span>02:36</span><small>/ 05:00</small></div>
+        <div class="timer-bar"><i></i></div>
+        <div class="timer-meta"><span>主题看点进行中</span><span>到点即止</span></div>
+        <div class="tag-row">
+          <span class="tag"># 主题设定</span>
+          <span class="tag"># 寸止节奏</span>
+          <span class="tag"># 围观讨论</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 今日主题 -->
+  <section id="themes">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">Today Themes</span>
+        <h2>今日主题卡片</h2>
+        <p>每日大赛主题大赛寸止挑战的主题卡按照看点类型分区，每张卡只承担一个主题方向，方便快速判断当天热点集中在哪里。</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><span class="card-no">主题 01</span><span class="badge hot">热议</span></div>
+          <h3>限时主题看点收束</h3>
+          <p>把当天的主题看点压缩进固定时长，时间一到立即停止展开，讨论重心落在“停在哪里”而不是“讲完全部”。这也是每日大赛主题大赛寸止挑战最核心的结构。</p>
+          <div class="card-foot"><span>节奏型</span>·<a href="#howto">查看玩法</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="card-no">主题 02</span><span class="badge">观察</span></div>
+          <h3>主题分支对照</h3>
+          <p>同一主题下拆出若干分支，围观者对照不同分支的寸止位置，判断哪一种处理更有回味。主题分支让每日大赛主题大赛寸止挑战的讨论不止一个答案。</p>
+          <div class="card-foot"><span>对照型</span>·<a href="#hot">看热点列表</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="card-no">主题 03</span><span class="badge">轻量</span></div>
+          <h3>主题短评与留白</h3>
+          <p>用短评代替长文，把内容长度控制在几行以内，剩下的交给留白。轻量主题适合碎片时间浏览，也是每日大赛主题大赛寸止挑战被反复提及的原因之一。</p>
+          <div class="card-foot"><span>轻量型</span>·<a href="#search">快速查找</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 玩法 -->
+  <section id="howto" style="background:#efece4">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">How It Works</span>
+        <h2>寸止挑战的玩法要点</h2>
+        <p>“寸止”强调分寸与停止的时机。理解这三点，就能读懂每日大赛主题大赛寸止挑战里大部分讨论的落点。</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#f08c00" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="#f08c00" stroke-width="2" stroke-linecap="round"/></svg>
+            节奏为什么重要
+          </h3>
+          <p>寸止挑战的看点来自“停”的位置。太早收束显得单薄，太晚又失去克制的意味，因此主题设定通常会给出一个大致的时间区间，让围观者有统一的判断标尺。</p>
+          <p>在每日大赛主题大赛寸止挑战的讨论中，节奏是否合理往往比内容本身更容易成为焦点：同一段主题，停在不同位置会得到完全不同的评价。</p>
+        </div>
+
+        <div class="panel">
+          <h3>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17l5-6 4 4 3-4 4 6" stroke="#f08c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="#f08c00" stroke-width="2" stroke-linecap="round"/></svg>
+            围观时可以看这几点
+          </h3>
+          <ul class="checklist">
+            <li><span class="num">1</span><span><b>主题是否明确：</b>当天主题是否一句话说得清，决定围观门槛高低。</span></li>
+            <li><span class="num">2</span><span><b>停止时机：</b>内容在哪个节点收住，是否留下可继续讨论的空间。</span></li>
+            <li><span class="num">3</span><span><b>讨论落点：</b>评论集中在节奏、内容还是表达方式，能反映热点的真实走向。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热点列表 -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-kicker">Hot Watch</span>
+        <h2>热点围观列表</h2>
+        <p>按围观讨论的集中程度排列，记录每日大赛主题大赛寸止挑战当天被提到较多的主题方向与讨论角度。</p>
+      </div>
+
+      <div class="list">
+        <div class="list-item">
+          <span class="rank top">1</span>
+          <h3>限时主题的停止点讨论<span>节奏类</span></h3>
+          <time>今日更新</time>
+        </div>
+        <div class="list-item">
+          <span class="rank top">2</span>
+          <h3>同一主题的多种寸止处理<span>对照类</span></h3>
+          <time>今日更新</time>
+        </div>
+        <div class="list-item">
+          <span class="rank top">3</span>
+          <h3>短评留白为什么更耐看<span>表达类</span></h3>
+          <time>今日更新</time>
+        </div>
+        <div class="list-item">
+          <span class="rank">4</span>
+          <h3>每日大赛主题大赛寸止挑战的围观入口合集<span>入口类</span></h3>
+          <time>今日更新</time>
+        </div>
+        <div class="list-item">
+          <span class="rank">5</span>
+          <h3>主题设定如何影响讨论温度<span>观察类</span></h3>
+          <time>今日更新</time>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 搜索 -->
+  <section id="search">
+    <div class="wrap">
+      <div class="filter-box">
+        <div>
+          <h2>按主题关键词快速查找</h2>
+          <p>输入主题方向或节奏关键词，页面会在下方提示匹配结果，帮你从每日大赛主题大赛寸止挑战的条目里定位到对应内容。</p>
+        </div>
+        <div>
+          <form class="search-form" id="themeSearch" role="search" onsubmit="return false;">
+            <label for="q" class="sr-only" style="position:absolute;left:-9999px">搜索主题关键词</label>
+            <input id="q" type="search" placeholder="例如：节奏 / 留白 / 对照" autocomplete="off">
+            <button type="submit">查找</button>
+          </form>
+          <p class="search-hint" id="hint" aria-live="polite">可尝试输入“节奏”“留白”“对照”“短评”。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="download-band">
+        <div>
+          <h2>主题素材包</h2>
+          <p>包含今日主题卡片模板与寸止节奏标注样式，用于整理每日大赛主题大赛寸止挑战的围观记录。</p>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          下载
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="logo-text" style="color:#fff">每日大赛主题大赛寸止挑战</span>
+        <p>围绕每日主题与寸止节奏的热点内容页，汇总主题卡片、玩法要点与围观列表，帮助访问者快速判断当天讨论的落点。</p>
+      </div>
+      <div class="foot-col">
+        <h3>页面导航</h3>
+        <a href="#themes">今日主题</a>
+        <a href="#howto">寸止玩法</a>
+        <a href="#hot">热点围观</a>
+        <a href="#search">快速查找</a>
+      </div>
+      <div class="foot-col">
+        <h3>主题关键词</h3>
+        <a href="#themes">主题大赛寸止挑战</a>
+        <a href="#howto">寸止挑战玩法</a>
+        <a href="#hot">每日大赛热点</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>每日大赛主题大赛寸止挑战 · 热点内容首页</span>
+      <span>内容按当日主题更新，具体讨论以页面所列条目为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var map = {
+    "节奏":"限时主题的停止点讨论",
+    "停止":"限时主题的停止点讨论",
+    "留白":"短评留白为什么更耐看",
+    "短评":"短评留白为什么更耐看",
+    "对照":"同一主题的多种寸止处理",
+    "分支":"同一主题的多种寸止处理",
+    "主题":"今日主题卡片",
+    "入口":"每日大赛主题大赛寸止挑战的围观入口合集"
+  };
+  var input = document.getElementById('q');
+  var hint = document.getElementById('hint');
+  var form = document.getElementById('themeSearch');
+  function run(){
+    var v = (input.value || '').trim();
+    if(!v){ hint.textContent = "可尝试输入“节奏”“留白”“对照”“短评”。"; return; }
+    var hit = null;
+    for(var k in map){ if(v.indexOf(k) > -1){ hit = map[k]; break; } }
+    if(hit){
+      hint.textContent = "匹配到：" + hit;
+    } else {
+      hint.textContent = "暂未匹配到条目，试试“节奏”“留白”“对照”或“入口”。";
+    }
+  }
+  form.addEventListener('submit', function(e){ e.preventDefault(); run(); });
+  input.addEventListener('input', run);
+})();
+</script>
+</body>
+</html>
